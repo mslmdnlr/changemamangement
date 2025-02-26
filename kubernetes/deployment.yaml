@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: konfigurasyon-planlayici
+  labels:
+    app: konfigurasyon-planlayici
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: konfigurasyon-planlayici
+  template:
+    metadata:
+      labels:
+        app: konfigurasyon-planlayici
+    spec:
+      containers:
+      - name: konfigurasyon-planlayici
+        image: konfigurasyon-planlayici:latest
+        imagePullPolicy: Never  # Yerel imaj kullanımı için
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m" 

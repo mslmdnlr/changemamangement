@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfigürasyon Planlayıcı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <script src="html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Ekleme Formu -->
+    <div class="form-container">
+        <div class="add-form">
+            <h3><i class="fas fa-edit"></i> Yeni Bilgi Ekle</h3>
+            <select id="boxSelector">
+                <option value="0">Konfigürasyon Öğeleri</option>
+                <option value="1">Etkilenecek Platformlar</option>
+                <option value="2">Etkilenecek Servisler</option>
+            </select>
+            <textarea id="boxContent" placeholder="Her satıra bir bilgi yazın..."></textarea>
+            <button id="addNewBox">Güncelle</button>
+        </div>
+    </div>
+
+    <!-- Workflow wrapper - indirme butonu kaldırıldı -->
+    <div class="workflow-wrapper">
+        <div class="container">
+            <!-- Konfigürasyon Kutusu -->
+            <div class="main-box config-box">
+                <div class="box-header">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Konfigürasyon Öğeleri</h3>
+                </div>
+                <p class="box-description">Yapılacak konfigürasyon değişiklikleri</p>
+                <div class="info-boxes"></div>
+            </div>
+
+            <!-- Ok 1 -->
+            <div class="arrow-container">
+                <div class="arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head"></div>
+                </div>
+            </div>
+
+            <!-- Platform Kutusu -->
+            <div class="main-box platform-box">
+                <div class="box-header">
+                    <i class="fas fa-server"></i>
+                    <h3>Etkilenecek Platformlar</h3>
+                </div>
+                <p class="box-description">Değişiklikten etkilenecek platformlar</p>
+                <div class="info-boxes"></div>
+            </div>
+
+            <!-- Ok 2 -->
+            <div class="arrow-container">
+                <div class="arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head"></div>
+                </div>
+            </div>
+
+            <!-- Servis Kutusu -->
+            <div class="main-box service-box">
+                <div class="box-header">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Etkilenecek Servisler</h3>
+                </div>
+                <p class="box-description">Etkilenecek servis listesi</p>
+                <div class="info-boxes"></div>
+            </div>
+        </div>
+    </div>
+    <!-- İndirme butonu wrapper dışına taşındı -->
+    <div class="download-container">
+        <button class="download-icon" onclick="downloadAsImage()" title="PNG olarak kaydet">
+            <i class="fas fa-download"></i>
+        </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
